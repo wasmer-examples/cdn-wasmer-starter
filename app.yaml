@@ -1,0 +1,4 @@
+---
+kind: wasmer.io/App.v0
+name: wasmer-edge-as-cdn
+package: wasmer/edge-on-cdn-tutorial
