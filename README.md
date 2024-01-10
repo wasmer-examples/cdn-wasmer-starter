@@ -28,6 +28,8 @@ wasmer deploy
 
 You will get the CDN URL after the deployment and can access your static files from the CDN.
 
+> You will need to change the namespace in `wasmer.toml` to your own namespace and app name in `app.yaml` to your own app name.
+
 ## Resources
 
 You can learn the full tutorial from [here](https://docs.wasmer.io/edge/tutorials/cdn)
