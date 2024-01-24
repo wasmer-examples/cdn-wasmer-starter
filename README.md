@@ -1,35 +1,22 @@
-# cdn-wasmer-starter
+A CDN starter template using [Static Web Server](https://github.com/static-web-server/static-web-server).
 
-A CDN starter using Static Web Server. You can use this starter to deploy your static files/websites to the CDN. The CDN is powered by [Wasmer Edge](https://docs.wasmer.io/edge)
+> You can follow the full tutorial from [here](https://docs.wasmer.io/edge/tutorials/cdn)
 
 ## Usage
 
-### 1. Install the `wasmer` CLI
-
-```bash
-curl https://get.wasmer.io -sSfL | sh
-```
-
-### 2. Clone this repository
-
-```bash
-git clone https://github.com/wasmer-examples/cdn-wasmer-starter.git
-```
-
-### 3. Add your static files
-
 You can add your static files to the `public` folder.
 
-### 4. Deploy your static files to the CDN
+## Deploy on Wasmer Edge
+
+The easiest way to serve your public assets is to use the [Wasmer Edge](https://wasmer.io/products/edge) as your CDN.
+
+Live example: http://cdn-wasmer-starter.wasmer.app/
+
+Run this commmand to deploy to Wasmer Edge:
 
 ```bash
 wasmer deploy
 ```
 
-You will get the CDN URL after the deployment and can access your static files from the CDN.
-
+> [!NOTE]
 > You will need to change the namespace in `wasmer.toml` to your own namespace and app name in `app.yaml` to your own app name.
-
-## Resources
-
-You can learn the full tutorial from [here](https://docs.wasmer.io/edge/tutorials/cdn)
