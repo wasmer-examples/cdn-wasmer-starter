@@ -3,7 +3,7 @@
 #### Address & Root dir
 host = "::"
 port = 8080
-root = "/app/public"
+root = "/public"
 
 #### Logging
 log-level = "error"
@@ -20,20 +20,20 @@ page404 = "./404.html"
 page50x = "./50x.html"
 
 #### HTTP/2 + TLS
-http2 = false
-http2-tls-cert = ""
-http2-tls-key = ""
-https-redirect = false
-https-redirect-host = "localhost"
-https-redirect-from-port = 80
-https-redirect-from-hosts = "localhost"
+# http2 = false
+# http2-tls-cert = ""
+# http2-tls-key = ""
+# https-redirect = false
+# https-redirect-host = "localhost"
+# https-redirect-from-port = 80
+# https-redirect-from-hosts = "localhost"
 
 #### CORS & Security headers
 # security-headers = true
 # cors-allow-origins = ""
 
 #### Directory listing
-directory-listing = false
+directory-listing = true
 
 #### Directory listing sorting code
 directory-listing-order = 1
@@ -66,13 +66,13 @@ redirect-trailing-slash = true
 compression-static = true
 
 #### Health-check endpoint (GET or HEAD `/health`)
-health = false
+# health = false
 
 #### List of index files
 # index-files = "index.html, index.htm"
 #### Maintenance Mode
 
-maintenance-mode = false
+# maintenance-mode = false
 # maintenance-mode-status = 503 
 # maintenance-mode-file = "./maintenance.html"
 

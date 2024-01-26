@@ -1,4 +1,4 @@
 ---
 kind: wasmer.io/App.v0
 name: cdn-wasmer-starter
-package: wasmer/edge-on-cdn-tutorial
+package: wasmer-examples/cdn-wasmer-starter

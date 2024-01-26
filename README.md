@@ -4,7 +4,18 @@ A CDN starter template using [Static Web Server](https://github.com/static-web-s
 
 ## Usage
 
-You can add your static files to the `public` folder.
+All the static files will be served from the `public` folder, and the static webserver will be configured using the `config.toml` file.
+
+You can run the CDN template easily using Wasmer (check out the [install guide](https://docs.wasmer.io/install)):
+
+```bash
+wasmer run wasmer-examples/cdn-wasmer-starter --net
+```
+
+> [!TIP]
+> You can also run `wasmer run . --net` in the root of this repo, after running `npm run build`
+
+Open [http://localhost:8080](http://localhost:8080) with your browser to see the CDN.
 
 ## Deploy on Wasmer Edge
 
