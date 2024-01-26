@@ -21,7 +21,7 @@ Open [http://localhost:8080](http://localhost:8080) with your browser to see the
 
 The easiest way to serve your public assets is to use the [Wasmer Edge](https://wasmer.io/products/edge) as your CDN.
 
-Live example: http://cdn-wasmer-starter.wasmer.app/
+Live example: https://cdn-wasmer-starter.wasmer.app/
 
 Run this commmand to deploy to Wasmer Edge:
 
