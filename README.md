@@ -9,7 +9,7 @@ All the static files will be served from the `public` folder, and the static web
 You can run the CDN template easily using Wasmer (check out the [install guide](https://docs.wasmer.io/install)):
 
 ```bash
-wasmer run . --net
+wasmer run .
 ```
 
 Open [http://localhost:8080](http://localhost:8080) with your browser to see the CDN.
