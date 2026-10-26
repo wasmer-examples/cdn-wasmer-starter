@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Wasmer CDN starter</title>
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 72rem;
+        padding: 2rem 1rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 1rem;
+      }
+      figure {
+        margin: 0;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+      }
+      code {
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wasmer CDN starter</h1>
+    <p>
+      Every file in <code>public/</code> is served from the site root, for example
+      <a href="/image1.avif"><code>/image1.avif</code></a>. Wasmer Edge CDN Cache is
+      enabled in <code>app.yaml</code>.
+    </p>
+
+    <section class="gallery">
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="/image1-800.avif 640w, /image1.avif 1280w" sizes="(min-width: 74rem) 23.4rem, (min-width: 58rem) calc((100vw - 4rem) / 3), (min-width: 39rem) calc((100vw - 3rem) / 2), calc(100vw - 2rem)" />
+          <img src="/image1.jpg" srcset="/image1-800.jpg 640w, /image1.jpg 1280w" sizes="(min-width: 74rem) 23.4rem, (min-width: 58rem) calc((100vw - 4rem) / 3), (min-width: 39rem) calc((100vw - 3rem) / 2), calc(100vw - 2rem)" width="1280" height="1600" alt="Northern lights above snowy mountains reflected in a lake" fetchpriority="high" />
+        </picture>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="/image2-800.avif 800w, /image2.avif 1600w" sizes="(min-width: 74rem) 23.4rem, (min-width: 58rem) calc((100vw - 4rem) / 3), (min-width: 39rem) calc((100vw - 3rem) / 2), calc(100vw - 2rem)" />
+          <img src="/image2.jpg" srcset="/image2-800.jpg 800w, /image2.jpg 1600w" sizes="(min-width: 74rem) 23.4rem, (min-width: 58rem) calc((100vw - 4rem) / 3), (min-width: 39rem) calc((100vw - 3rem) / 2), calc(100vw - 2rem)" width="1600" height="1067" alt="A person walking across a red desert at dawn" decoding="async" />
+        </picture>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="/image3-800.avif 800w, /image3.avif 1600w" sizes="(min-width: 74rem) 23.4rem, (min-width: 58rem) calc((100vw - 4rem) / 3), (min-width: 39rem) calc((100vw - 3rem) / 2), calc(100vw - 2rem)" />
+          <img src="/image3.jpg" srcset="/image3-800.jpg 800w, /image3.jpg 1600w" sizes="(min-width: 74rem) 23.4rem, (min-width: 58rem) calc((100vw - 4rem) / 3), (min-width: 39rem) calc((100vw - 3rem) / 2), calc(100vw - 2rem)" width="1600" height="1200" alt="A surfer riding a wave in morning fog" decoding="async" />
+        </picture>
+      </figure>
+    </section>
+
+    <h2>Check the cache</h2>
+    <p>Request a file twice and read the <code>x-cache-status</code> header:</p>
+    <pre><code id="check-cache">curl -s -o /dev/null -D - https://cdn-wasmer-starter.wasmer.app/image1.avif | grep -i x-cache-status</code></pre>
+    <script>
+      document.getElementById("check-cache").textContent =
+        "curl -s -o /dev/null -D - " + location.origin + "/image1.avif | grep -i x-cache-status";
+    </script>
+    <p>
+      The first request is a <code>MISS</code>, and the next one from the same Edge node is a
+      <code>HIT</code>. Use a <code>GET</code> request as above: a <code>HEAD</code> request
+      (<code>curl -I</code>) does not fill the cache. Read the
+      <a href="https://docs.wasmer.io/edge/learn/cdn-cache/">CDN Cache documentation</a>.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+kind: wasmer.io/App.v0
+name: cdn-wasmer-starter
+package: .
+capabilities:
+  cdn_cache:
+    enabled: true
